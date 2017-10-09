@@ -23,6 +23,11 @@ ExportedObj/
 *.svd
 *.pdb
 
+# Custom
+hashKeys.cs
+hashKeys.cs.meta
+*.rar
+
 # Unity3D generated meta files
 *.pidb.meta
 

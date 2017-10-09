@@ -1,0 +1,50 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
+    Vendor:   NVIDIA
+    VRAM:     2954 MB
+    Driver:   21.21.13.7570
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\TextMeshPro-1.0.55.56.0b11.dll (this message is harmless)
+Loading C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\TextMeshPro-1.0.55.56.0b11.dll into Unity Child Domain
+- Completed reload, in  0.177 seconds
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ThybePC\Documents\1And1.0\1.0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 75Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.195943 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.361451 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 432.
+Total: 0.246291 ms (FindLiveObjects: 0.031936 ms CreateObjectMapping: 0.011241 ms MarkObjects: 0.172455 ms  DeleteObjects: 0.029892 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.398307 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 432.
+Total: 0.232239 ms (FindLiveObjects: 0.026315 ms CreateObjectMapping: 0.012007 ms MarkObjects: 0.189828 ms  DeleteObjects: 0.003065 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.382211 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 375.
+Total: 0.273884 ms (FindLiveObjects: 0.018650 ms CreateObjectMapping: 0.012007 ms MarkObjects: 0.225341 ms  DeleteObjects: 0.017117 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 8b0 -> priority: 1 
+  Thread -> id: 2508 -> priority: 1 
+  Thread -> id: 3754 -> priority: 1 
+  Thread -> id: 25cc -> priority: 1 
