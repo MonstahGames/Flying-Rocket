@@ -54,6 +54,7 @@ public class DefaultSongs : MonoBehaviour
     }
     public void Back ()
     {
-        SceneManager.LoadScene("SongsPanel");
+        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("SongsPanel");
     }
 }

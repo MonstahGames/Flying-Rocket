@@ -46,7 +46,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 c492c0ab44af27741c9129cf601db876 Assembly-CSharp.dll:.AccountManage
-6a8a9589a50201f03471395593e57285 Assembly-CSharp.dll:.gameManagerEndless
+7ef70e91846557230c966b09a4a5ddc5 Assembly-CSharp.dll:.gameManagerEndless
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -79,7 +79,6 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-b1fd20031c1bc54eb8334a69164bb334 Assembly-CSharp.dll:.SongsPanel
 edd1b9fef3988d5c5df8fed4ec6c27ed Assembly-CSharp.dll:.TestScript
 5e883eb4e5b89ec5605fd11606f097bb Assembly-CSharp.dll:.SendMessage
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -117,6 +116,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 5b889f3b1751162ba81695d4e9f54c2f Assembly-CSharp.dll:.Score
 5fac221a407fadd4b2d900d2198164cf Assembly-CSharp.dll:.Shop
+b0989903a00ffd307ef3a1007ba3ced2 Assembly-CSharp.dll:.ServerData
 ea6c6f2f98e3e5b48f72d99b505bf81d Assembly-CSharp.dll:.gameManagerLB
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ButtonToMain
 d2071be7f6ffd9d8f58097114b4ce824 Assembly-CSharp.dll:.Scrolllist
@@ -140,7 +140,8 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 5e66cc1ccc8b56f80937f2b7a6e35ba6 Assembly-CSharp.dll:.playerCollision
-03d2fe5b1d16545c0daf4f3bf627de49 Assembly-CSharp.dll:.HSController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.hashKeys
+85d33c502e608db9779b796fecf3f6b8 Assembly-CSharp.dll:.HSController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -153,14 +154,11 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.EndScene
 54696b81ca53a80a3029e312f84a2b37 Assembly-CSharp.dll:.ProfileStats
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UpdateScore
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.IDGetter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ShopManager
-0d21029e7441e6b3f1d0570fbbbbc575 Assembly-CSharp.dll:.Meteor
-43dfe0bee65fcc98a102466d0ff6a3bb Assembly-CSharp.dll:.DataManager
+cd76951bdc899e472958c599d4c0b286 Assembly-CSharp.dll:.Meteor
+dbb1f28c8b888e4154ad8651bcb080af Assembly-CSharp.dll:.DataManager
 227dc7eaa30ae55d68beb7f612649a21 Assembly-CSharp.dll:.LoginAccPanel
 1376f0fdd2f7c7c4d329ace3694c0c30 Assembly-CSharp.dll:.RequestMessages
 73841ba5978f7c76452cd7a78d069f07 Assembly-CSharp.dll:.inboxManager
 197f880d41a3d6faa22e9546848c76be Assembly-CSharp.dll:.meteorSpawner
-05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder

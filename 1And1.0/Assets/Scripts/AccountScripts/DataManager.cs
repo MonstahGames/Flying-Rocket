@@ -9,9 +9,15 @@ public class DataManager : MonoBehaviour
     public string SaveURL = "http://sigmastudios.tk/FlyingRocket/saveFRData13.php";
     public string LoadURL = "http://sigmastudios.tk/FlyingRocket/loadFRData13.php";
 
-    public string key = PlayerPrefs.GetString("savedatakey");
-    public string LoadKey = PlayerPrefs.GetString("loaddatakey");
+    string key;
+    string LoadKey;
 
+    void Start ()
+    {
+        key = PlayerPrefs.GetString("savedatakey");
+        LoadKey = PlayerPrefs.GetString("loaddatakey");
+    }
+    
     #region Hash
     public static byte[] GetHash(string inputString)
     {

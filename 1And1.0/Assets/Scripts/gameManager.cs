@@ -75,6 +75,8 @@ public class gameManager : MonoBehaviour
     }
     public void ToSongs ()
     {
-        SceneManager.LoadSceneAsync("SongsPanel");
+        SceneManager.LoadSceneAsync("DefaultSongs");
+        //VV To be added back in 1.4
+        //SceneManager.LoadSceneAsync("SongsPanel");
     }
 }

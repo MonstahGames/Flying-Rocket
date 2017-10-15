@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 771781145}
+      - m_Target: {fileID: 0}
         m_MethodName: ToDefault
         m_Mode: 1
         m_Arguments:
@@ -644,7 +644,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 771781146}
-  - component: {fileID: 771781145}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -652,18 +651,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &771781145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 771781144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c53b5382198f93e45a1f73df3c0e0f04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songIDInput: {fileID: 0}
 --- !u!4 &771781146
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,7 +1718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 771781145}
+      - m_Target: {fileID: 0}
         m_MethodName: DownloadSong
         m_Mode: 1
         m_Arguments:
@@ -1986,7 +1973,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 771781145}
+      - m_Target: {fileID: 0}
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:

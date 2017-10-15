@@ -51,7 +51,7 @@ public class playerCollision : MonoBehaviour
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                Advertisement.Show();
+                //Advertisement.Show();
             }        
         }
     }

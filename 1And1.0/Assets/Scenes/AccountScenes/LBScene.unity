@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 471675851}
   - component: {fileID: 471675853}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: AccountManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,8 +776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveURL: http://sigmastudios.tk/FlyingRocket/saveFRData13.php
   LoadURL: http://sigmastudios.tk/FlyingRocket/loadFRData13.php
-  key: frSaveDataKey_9629
-  LoadKey: frLoadDataKey_2573
 --- !u!1 &547174103
 GameObject:
   m_ObjectHideFlags: 0

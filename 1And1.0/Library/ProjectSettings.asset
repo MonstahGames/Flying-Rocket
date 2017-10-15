@@ -219,7 +219,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/ThybePC/Documents/GitHub/Flying-Rocket/officialGooglePlay.keystore
+  AndroidKeystoreName: C:/Users/PlopKoeken/Documents/1And1.0/officialGooglePlay.keystore
   AndroidKeyaliasName: flying rocket
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
@@ -633,9 +633,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 05b94cd8-99ca-49f0-b379-a73631da8b54
-  projectName: Flying Rocket
-  organizationId: monstahgames
+  cloudProjectId: 6739b6ed-362b-4819-b98a-d24c146b72c3
+  projectName: Flying Rocket (1)
+  organizationId: jajajakysblyat
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

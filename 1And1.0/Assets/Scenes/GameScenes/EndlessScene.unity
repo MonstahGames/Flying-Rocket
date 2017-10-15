@@ -4254,6 +4254,7 @@ MonoBehaviour:
   score: {fileID: 702787677}
   scoreText: {fileID: 8381093}
   highscoreText: {fileID: 441767253}
+  posit: {fileID: 1066999236}
   source: {fileID: 292113261}
   loops:
   - {fileID: 8300000, guid: c7096a6d53270c4458b07d6812697d2b, type: 3}

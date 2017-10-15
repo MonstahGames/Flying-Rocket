@@ -13,7 +13,7 @@ public class gameManagerEndless : MonoBehaviour
     public Score score;
     public Text scoreText;
     public Text highscoreText;
-
+    public Transform posit;
     public AudioSource source;
     public AudioClip[] loops;
 
@@ -57,10 +57,17 @@ public class gameManagerEndless : MonoBehaviour
     public void PauseGame ()
     {
         Time.timeScale = 0;
+        PlayerPrefs.SetInt("paused", 1);
         score.kys = true;
         source.Pause();
         pausedPanel.SetActive(true);
-
+        if (PlayerPrefs.GetInt("InputValue") == 1)
+        {
+            while(Time.timeScale == 0)
+            {
+                posit.Translate(new Vector3(0, 0, 0));
+            }
+        }
 
         int bugs;
         bugs = score.scoreInt--;
@@ -72,6 +79,7 @@ public class gameManagerEndless : MonoBehaviour
     {
         Time.timeScale = 1;
         score.kys = false;
+        PlayerPrefs.SetInt("paused", 0);
         source.UnPause();
         pausedPanel.SetActive(false);
     }

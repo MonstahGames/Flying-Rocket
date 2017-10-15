@@ -7,15 +7,20 @@ using UnityEngine.UI;
 
 public class gameManagerLB : MonoBehaviour
 {
+    #region Variables
     public InputField usernameBox;
     public InputField passwordBox;
     public InputField emailBox;
     public Text rText;
     public GameObject rTextObj;
     public DataManager manager;
+
     
     string CreateUserURL = "http://sigmastudios.tk/FlyingRocket/createFRAccount.php";
+    string existsLink = "http://sigmastudios.tk/FlyingRocket/nameExists13.php";
+    #endregion
 
+    #region CreatePrep
     public void createAccountButton ()
     {
         string usernameInput = usernameBox.text;
@@ -45,10 +50,21 @@ public class gameManagerLB : MonoBehaviour
             {
                 rTextObj.SetActive(true);
                 rText.text = "You cannot use ; in your username.";
-            } else StartCoroutine(CreateAccount(usernameInput, passwordInput, emailInput));
-
+            }
+            else
+            {
+                StartCoroutine(NameExists(usernameInput, passwordInput, emailInput));          
+            }
         }
     }
+
+    public void Start()
+    {
+        manager = FindObjectOfType<DataManager>();
+    }
+    #endregion
+
+    #region Hash
     public static byte[] GetHash(string inputString)
     {
         HashAlgorithm algorithm = SHA512.Create();
@@ -62,6 +78,35 @@ public class gameManagerLB : MonoBehaviour
 
         return sb.ToString();
     }
+    #endregion
+
+    #region CheckIfExists
+    IEnumerator NameExists(string username, string pass, string email)
+    {
+        string hashKey = PlayerPrefs.GetString("nameExistsKey");
+        string hash = "'" + username + "'" + "," + "'" + hashKey + "'";
+        WWWForm form = new WWWForm();
+        form.AddField("usernamePost", username);
+        form.AddField("hashPost", GetHashString(hash));
+        WWW www = new WWW(existsLink, form);
+        yield return www;
+        ProcessNameExists(www.text, username, pass, email);
+    }
+    void ProcessNameExists (string result, string username, string password, string email)
+    {
+        if (result == "1")
+        {
+            StartCoroutine(CreateAccount(username, password, email));
+        }
+        if (result == "-1")
+        {
+            rTextObj.SetActive(true);
+            rText.text = "Username is already taken.";
+        }
+    }
+    #endregion
+
+    #region CreateAccount
     IEnumerator CreateAccount (string usernameInput, string passwordInput, string emailInput)
     {
         string hashKey = "createaccHashKey6501";
@@ -94,6 +139,9 @@ public class gameManagerLB : MonoBehaviour
 
         Debug.Log("Username: " + PlayerPrefs.GetString("username") + " Password: " + PlayerPrefs.GetString("password"));
     }
+    #endregion
+
+    #region Misc
     public void ToMenu ()
     {
         SceneManager.LoadScene("MainMenu");
@@ -106,8 +154,6 @@ public class gameManagerLB : MonoBehaviour
     {
         SceneManager.LoadScene("LoginPanel");
     }
-    public void Start ()
-    {
-        manager = FindObjectOfType<DataManager>();
-    }
+    #endregion
+
 }

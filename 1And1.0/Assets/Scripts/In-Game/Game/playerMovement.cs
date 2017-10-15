@@ -25,7 +25,11 @@ public class playerMovement : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("InputValue") == 1)
         {
-            transform.Translate(Input.acceleration.x, 0, 0);
+            if (PlayerPrefs.GetInt("paused") == 0)
+            {
+                transform.Translate(Input.acceleration.x, 0, 0);
+            }
+            
         }
     }
 
