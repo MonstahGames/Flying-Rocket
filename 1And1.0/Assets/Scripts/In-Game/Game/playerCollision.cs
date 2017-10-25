@@ -12,6 +12,10 @@ public class playerCollision : MonoBehaviour
     public Text scoreText;
     public GameObject count;
     public Text HSText;
+    public Text balanceText;
+    int balance;
+    int tBalance;
+
 
     public void OnTriggerEnter2D (Collider2D col)
     {
@@ -27,12 +31,44 @@ public class playerCollision : MonoBehaviour
         disEnableGO();
                    
         int highScoreNumber = Convert.ToInt32(scoreText.text);
+        #region earned
+        if (highScoreNumber < 1000)
+        {
+            countEarnedScraps(1);
+        } else if (highScoreNumber < 2000)
+        {
+            countEarnedScraps(2);
+        } else if (highScoreNumber < 3000)
+        {
+            countEarnedScraps(3);
+        } else if (highScoreNumber < 4000)
+        {
+            countEarnedScraps(4);
+        } else if (highScoreNumber < 5000)
+        {
+            countEarnedScraps(5);
+        } else if (highScoreNumber < 6000)
+        {
+            countEarnedScraps(6);
+        } else if (highScoreNumber < 7000)
+        {
+            countEarnedScraps(7);
+        }
+        #endregion
 
         if (highScoreNumber >= PlayerPrefs.GetInt("highScore"))
         {
             PlayerPrefs.SetInt("highScore", highScoreNumber);
         }
-        setText();       
+        SetText();
+    }
+    void countEarnedScraps (int earned)
+    {
+        balance = PlayerPrefs.GetInt("balance");
+        int newBalance;
+        newBalance = balance * earned;
+        PlayerPrefs.SetInt("balance", newBalance);
+        balanceText.text = "$" + newBalance;
     }
     public void ButtonToRestart()
     {
@@ -61,7 +97,7 @@ public class playerCollision : MonoBehaviour
         Player.SetActive(false);
         count.SetActive(false);
     }
-    void setText ()
+    void SetText ()
     {
         int _pPhighScore = PlayerPrefs.GetInt("highScore");
         HSText.text = _pPhighScore.ToString();

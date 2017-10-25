@@ -115,12 +115,12 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 5b889f3b1751162ba81695d4e9f54c2f Assembly-CSharp.dll:.Score
-5fac221a407fadd4b2d900d2198164cf Assembly-CSharp.dll:.Shop
+90c44e5eeeefcbb2ccf8e34d6c0299bc Assembly-CSharp.dll:.Shop
 b0989903a00ffd307ef3a1007ba3ced2 Assembly-CSharp.dll:.ServerData
 ea6c6f2f98e3e5b48f72d99b505bf81d Assembly-CSharp.dll:.gameManagerLB
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ButtonToMain
 d2071be7f6ffd9d8f58097114b4ce824 Assembly-CSharp.dll:.Scrolllist
-63f872e4999f33021bac1fce830b0ad4 Assembly-CSharp.dll:.AccountPanel
+ddebcb6c946fb79f5d6a41c1e29b34a6 Assembly-CSharp.dll:.AccountPanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.levelSelector
 748f4f060b7ce4c72583ef905caa1576 Assembly-CSharp.dll:.IsBanned
 3a5849865175ae8615631c3906ba59ea Assembly-CSharp.dll:.displayRocket
@@ -139,7 +139,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-5e66cc1ccc8b56f80937f2b7a6e35ba6 Assembly-CSharp.dll:.playerCollision
+0ea29138d034f9a98fa4419b0a411222 Assembly-CSharp.dll:.playerCollision
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.hashKeys
 85d33c502e608db9779b796fecf3f6b8 Assembly-CSharp.dll:.HSController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback

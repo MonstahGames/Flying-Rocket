@@ -25,6 +25,8 @@ public class playerMovement : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("InputValue") == 1)
         {
+            return;
+            //^ Removed Tilt
             if (PlayerPrefs.GetInt("paused") == 0)
             {
                 transform.Translate(Input.acceleration.x, 0, 0);

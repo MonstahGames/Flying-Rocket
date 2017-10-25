@@ -10,20 +10,11 @@ public class meteorSpawner : MonoBehaviour
 
     void Update ()
     {
-        if (SceneManager.GetActiveScene().name.Contains("level"))
-        {
-            
-
-        } else
-        {
             if (nextTimeToSpawn <= Time.time)
             {
                 SpawnMeteor();
                 nextTimeToSpawn = Time.time + spawnDelay;
-            }
-        }
-
-        
+            }     
     }
     public void SpawnMeteor ()
     {

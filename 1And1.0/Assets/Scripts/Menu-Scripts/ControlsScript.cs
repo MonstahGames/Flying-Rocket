@@ -20,11 +20,11 @@ public class ControlsScript : MonoBehaviour
         PlayerPrefs.SetInt("InputValue", 0);
         InputFrame.SetActive(false);
     }
-    public void TiltMotor ()
-    {
-        PlayerPrefs.SetInt("InputValue", 1);
-        InputFrame.SetActive(false);
-    }
+    //ublic void TiltMotor ()
+    //
+    //   PlayerPrefs.SetInt("InputValue", 1);
+    //   InputFrame.SetActive(false);
+    //
     public void DisableInput ()
     {
         InputFrame.SetActive(false);
@@ -47,8 +47,8 @@ public class ControlsScript : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("isRegistered") == 1)
         {
-            SaveData();
-            UnloadPrefs();     
+            //SaveData();
+            PlayerPrefs.DeleteAll();     
         } else
         {
             logOutResultText.text = "You are not logged in to an Account!";
@@ -58,14 +58,6 @@ public class ControlsScript : MonoBehaviour
     void SaveData ()
     {
         manager.SaveButton();
-    }
-    public void UnloadPrefs ()
-    {
-        PlayerPrefs.DeleteKey("username");
-        PlayerPrefs.DeleteKey("password");
-        PlayerPrefs.SetInt("isRegistered", 0);
-        PlayerPrefs.SetInt("userID", 0);
-        PlayerPrefs.SetInt("IsBanned", 0);
     }
     #region Scenes
     public void ToAdvanced()

@@ -9,23 +9,30 @@ public class AccountPanel : MonoBehaviour
     public Text accstatusText;
     public Text balanceText;
     public GameObject buttonObj;
+    public GameObject inboxObj;
     
-    public void Start ()
-    {
-        
+    void Start ()
+    {        
         username.text = PlayerPrefs.GetString("username");
         highscore.text = PlayerPrefs.GetInt("highScore").ToString();
         balanceText.text = "$" + PlayerPrefs.GetInt("balance").ToString();
+
+        CheckBanned();     
+    }
+    void CheckBanned ()
+    {
         if (PlayerPrefs.GetInt("IsBanned") == 1)
         {
             buttonObj.SetActive(false);
-            accstatusText.text = "Banned.";
+            inboxObj.SetActive(false);
+            accstatusText.text = "Banned";
         }
         else
         {
-            accstatusText.text = "Normal.";
+            accstatusText.text = "Normal";
         }
     }
+    #region Navigation
     public void ToMenu ()
     {
         SceneManager.LoadSceneAsync("MainMenu");
@@ -42,4 +49,5 @@ public class AccountPanel : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("InboxPanel");
     }
+    #endregion
 }

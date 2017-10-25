@@ -6,26 +6,23 @@ public class Shop : MonoBehaviour
     /*
      Copyright Sigma Studios (c) 2017
      All Rights Reserved.
-
-        (no judging the ugly code thanks)
     */
+
+    public displayRocket dispRocket;
 
     public Text buyResult;
     public GameObject buyResultObj;
     public GameObject[] moneyLabels;
-    public GameObject[] buttons;
+    public GameObject[] buyButtons;
+    public GameObject[] selectButtons;
     public Text moneyStatus;
-    public int moneyInspector;
+    public int[] rocketIDs;
     int rocketID;
 
     void Start ()
     {
-        AddMoney();
+        CheckMem();
         moneyStatus.text = "$" + PlayerPrefs.GetInt("balance");
-    }
-    void AddMoney ()
-    {
-        PlayerPrefs.SetInt("balance", moneyInspector);
     }
     public void GetRocketID (int id)
     {
@@ -59,23 +56,36 @@ public class Shop : MonoBehaviour
     public void SelectRocket (int rocketID)
     {
         PlayerPrefs.SetInt("currentRocketID", rocketID);
-        Debug.Log("Selected.");
+        selectButtons[rocketID].SetActive(false);
     }
     void AddToBought ()
     {
         moneyLabels[rocketID].SetActive(false);
-        buttons[rocketID].SetActive(false);
-        PlayerPrefs.SetInt("id " + rocketID.ToString(), 1);
-        Debug.Log(PlayerPrefs.GetInt(rocketID.ToString()));
-    }
+        buyButtons[rocketID].SetActive(false);
 
-    //Only for testing, won't be in final 1.3
-    public void DelKey ()
-    {
-        PlayerPrefs.DeleteKey("0");
-        PlayerPrefs.DeleteKey("1");
-        PlayerPrefs.DeleteKey("2");
-        PlayerPrefs.DeleteKey("currentRocketID");
+        AddMem(rocketID);
     }
+    void AddMem (int id)
+    {
+        PlayerPrefs.SetInt("rocketBoughtID" + id, 1);
+    }
+    void CheckMem ()
+    {
+        foreach (int id in rocketIDs)
+        {
+            if (PlayerPrefs.GetInt("rocketBoughtID" + id) == 1)
+            {
+                moneyLabels[id].SetActive(false);
+                buyButtons[id].SetActive(false);
+                if (PlayerPrefs.GetInt("currentRocketID") == id)
+                {
+                    selectButtons[id].SetActive(false);
+                } else
+                {
+                    selectButtons[id].SetActive(true);
+                }
+            }
+        }
+    }   
 }
 

@@ -46,7 +46,7 @@ public class HSController : MonoBehaviour
             {
                 startPostScores();
                 startGetScores();
-                HSController.Instance.startGetScores();
+                Instance.startGetScores();
             } else
             {
                 errorObj.SetActive(true);
@@ -95,10 +95,7 @@ public class HSController : MonoBehaviour
     {
         StartCoroutine(PostScores());
     }
-    public void ToMenu ()
-    {
-        SceneManager.LoadSceneAsync("AccountPanel");
-    }
+    #region Hash
     public static byte[] GetHash(string inputString)
     {
         HashAlgorithm algorithm = SHA512.Create();
@@ -112,6 +109,7 @@ public class HSController : MonoBehaviour
 
         return sb.ToString();
     }
+    #endregion
     IEnumerator PostScores()
     {
         uniqueID = PlayerPrefs.GetString("userID");
@@ -143,5 +141,9 @@ public class HSController : MonoBehaviour
 
         Scrolllist.Instance.loading = false;
         Scrolllist.Instance.getScrollEntrys();
+    }
+    public void ToMenu()
+    {
+        SceneManager.LoadSceneAsync("AccountPanel");
     }
 }

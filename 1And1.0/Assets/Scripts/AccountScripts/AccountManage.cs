@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class AccountManage : MonoBehaviour
 {
-    
+
+    #region UnityVariables
     //Frames
     public GameObject username;
     public GameObject password;
@@ -28,11 +29,16 @@ public class AccountManage : MonoBehaviour
     public InputField emailInputField;
     public GameObject emailResultObj;
     public Text emailResultText;
+    #endregion
 
-    string changeusernameurl = "http://sigmastudios.tk/FlyingRocket/changeFRUsername12.php";
-    string changepassurl = "http://sigmastudios.tk/FlyingRocket/changeFRPassword12.php";
-    string changeemailurl = "http://sigmastudios.tk/FlyingRocket/changeFREmail12.php";
+    #region Links
+    string changeUsernameURL = "http://sigmastudios.tk/FlyingRocket/changeFRUsername12.php";
+    string changePassURL = "http://sigmastudios.tk/FlyingRocket/changeFRPassword12.php";
+    string changeEmailURL = "http://sigmastudios.tk/FlyingRocket/changeFREmail12.php";
+    string nameExistsLink = "http://sigmastudios.tk/FlyingRocket/nameExists13.php";
+    #endregion
 
+    #region Hash
     public static byte[] GetHash(string inputString)
     {
         HashAlgorithm algorithm = SHA512.Create();
@@ -46,10 +52,9 @@ public class AccountManage : MonoBehaviour
 
         return sb.ToString();
     }
-    public void ToAcc ()
-    {
-        SceneManager.LoadSceneAsync("AccountPanel");
-    }
+    #endregion
+
+    #region AppearFrames
     public void AppearEnableUsername ()
     {
         password.SetActive(false);
@@ -68,11 +73,13 @@ public class AccountManage : MonoBehaviour
         password.SetActive(false);
         username.SetActive(false);
     }
+    #endregion
 
+    #region ChangeData
     public void ChangeUsername ()
     {
         string usernameInput = usernameInputField.text;
-        StartCoroutine(ChangeNameRequest(usernameInput));
+        StartCoroutine(NameExists(usernameInput));
     }
     public void ChangePassword ()
     {
@@ -82,23 +89,47 @@ public class AccountManage : MonoBehaviour
     }
     public void ChangeEmail ()
     {
-        string EmailInput = emailInputField.text;
-        StartCoroutine(ChangeEmailRequest(EmailInput));
+        string emailInput = emailInputField.text;
+        StartCoroutine(ChangeEmailRequest(emailInput));
     }
+    #endregion
 
+    #region Enumerators
+    IEnumerator NameExists(string username)
+    {
+        string hashKey = PlayerPrefs.GetString("nameExistsKey");
+        string hash = "'" + username + "'" + "," + "'" + hashKey + "'";
+        WWWForm form = new WWWForm();
+        form.AddField("usernamePost", username);
+        form.AddField("hashPost", GetHashString(hash));
+        WWW www = new WWW(nameExistsLink, form);
+        yield return www;
+        ProcessNameExists(www.text, username);
+    }
+    void ProcessNameExists(string result, string username)
+    {
+        if (result == "1")
+        {
+            StartCoroutine(ChangeNameRequest(username));          
+        }
+        if (result == "-1")
+        {
+            userResultObj.SetActive(true);
+            userResultText.text = "This username is unavailable.";
+        }
+    }
     IEnumerator ChangeNameRequest (string usernamePost)
     {
         string hashKey = PlayerPrefs.GetString("changenamekey");
         string kys = "'" + PlayerPrefs.GetString("username") + "'" + "," + "'" + PlayerPrefs.GetString("password") + "'" + "," + "'" + hashKey + "'";
         string hash = GetHashString(kys);
-        
         WWWForm form = new WWWForm();
         form.AddField("userID", PlayerPrefs.GetString("userID"));
         form.AddField("username", PlayerPrefs.GetString("username"));
         form.AddField("password", PlayerPrefs.GetString("password"));
         form.AddField("usernameToPost", usernamePost);
         form.AddField("hashPost", hash);
-        WWW www = new WWW(changeusernameurl, form);
+        WWW www = new WWW(changeUsernameURL, form);
         yield return www;
         Debug.Log(www.text);
         if (www.text.Contains("1"))
@@ -106,7 +137,6 @@ public class AccountManage : MonoBehaviour
             PlayerPrefs.SetString("username", usernamePost);
             userResultObj.SetActive(true);
             userResultText.text = "Username has been changed.";
-            //manager.SaveButton();
         }
         if (www.text.Contains("-1"))
         {
@@ -123,14 +153,13 @@ public class AccountManage : MonoBehaviour
         form.AddField("passwordOldPost", passwordOld);
         form.AddField("passwordNewPost", passwordNew);
         form.AddField("hash", GetHashString(kys));
-        WWW www = new WWW(changepassurl, form);
+        WWW www = new WWW(changePassURL, form);
         yield return www;
         if (www.text.Contains("1"))
         {
             PlayerPrefs.SetString("password", passwordNew);
             passwordResultObj.SetActive(true);
             passwordResultText.text = "Password has been changed.";
-            //manager.SaveButton();
         } else
         {
             passwordResultObj.SetActive(true);
@@ -146,7 +175,7 @@ public class AccountManage : MonoBehaviour
         form.AddField("userID", PlayerPrefs.GetString("userID"));
         form.AddField("emailPost", email);
         form.AddField("hashPost", hash);
-        WWW www = new WWW(changeemailurl, form);
+        WWW www = new WWW(changeEmailURL, form);
         yield return www;
         Debug.Log(www.text);
         if (!www.text.Contains("1"))
@@ -158,5 +187,11 @@ public class AccountManage : MonoBehaviour
             emailResultObj.SetActive(true);
             emailResultText.text = "Email changed.";
         }
+    }
+    #endregion
+
+    public void ToAcc()
+    {
+        SceneManager.LoadSceneAsync("AccountPanel");
     }
 }

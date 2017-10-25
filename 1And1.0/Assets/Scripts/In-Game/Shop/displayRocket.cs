@@ -14,7 +14,5 @@ public class displayRocket : MonoBehaviour
         pRenderer.sprite = rocketSprites[rocketID];
 
         if (rocketID == 4) transform.localScale = new Vector3(0.15f, 0.25f, 0);
-
-
     }
 }

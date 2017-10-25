@@ -9,6 +9,7 @@ public class gameManagerEndless : MonoBehaviour
      All Rights Reserved.
     */
 
+    
     public GameObject pausedPanel;
     public Score score;
     public Text scoreText;
@@ -19,6 +20,7 @@ public class gameManagerEndless : MonoBehaviour
 
     void Start ()
     {
+       
         if (PlayerPrefs.GetInt("selectedSong") != 0)
         {
             if (PlayerPrefs.GetInt("selectedSong") == -1)
@@ -63,10 +65,6 @@ public class gameManagerEndless : MonoBehaviour
         pausedPanel.SetActive(true);
         if (PlayerPrefs.GetInt("InputValue") == 1)
         {
-            while(Time.timeScale == 0)
-            {
-                posit.Translate(new Vector3(0, 0, 0));
-            }
         }
 
         int bugs;
