@@ -14,7 +14,8 @@ public class ServerData : MonoBehaviour
 
     public GameObject serverStatusFrame;
     public Text serverStatusText;
-    public string datalink = "http://sigmastudios.tk/FlyingRocket/getFRServerStatus13.php";
+
+    string datalink = "http://sigmastudios.tk/FlyingRocket/getFRServerStatus13.php";
 
     void Start ()
     {
@@ -24,8 +25,11 @@ public class ServerData : MonoBehaviour
     {
         WWW www = new WWW(datalink);
         yield return www;
-        //Will expand on this later, not just checking if the server is down.
-        if (www.text == "1") ServerDown();
+
+        if (www.text == "1")
+        {
+            ServerDown();
+        } 
     }
     void ServerDown ()
     {

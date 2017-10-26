@@ -15,8 +15,9 @@ public class Scrolllist : MonoBehaviour
     {
 		if (instance5 == null)
 			instance5 = this;
-		else if (instance5 != this) {
-			Destroy (gameObject);
+		else if (instance5 != this)
+        {
+			Destroy(gameObject);
 			return;
 		}
 	}

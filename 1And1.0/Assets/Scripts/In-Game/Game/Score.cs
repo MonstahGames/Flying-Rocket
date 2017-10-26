@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
     public void Update ()
     {
         CountScore();
-        if (kys == true)
+        if (kys)
         {
             scoreInt--;
         }
@@ -23,9 +23,5 @@ public class Score : MonoBehaviour
     {
         scoreInt++;
         scoreText.text = scoreInt.ToString();
-    }
-    public void EndLevel ()
-    {
-        //Code Here (Not Implemented)
     }
 }
