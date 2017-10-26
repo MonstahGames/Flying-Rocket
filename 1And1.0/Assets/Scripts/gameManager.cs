@@ -1,12 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
+    /*
+     Copyright SigmaStudios (c) 2017
+     All Rights Reserved.
+     */
+
     public GameObject accRegButton;
     public GameObject accPanelButton;
+    public GameObject rTextObj;
 
-    public void Start ()
+    public Text rText;
+
+    void Start ()
     {
         if (PlayerPrefs.GetInt("highScore") != 0)
         {
@@ -34,7 +43,22 @@ public class gameManager : MonoBehaviour
         {
             if (PlayerPrefs.GetString("password") != null)
             {
-                SceneManager.LoadSceneAsync("AccountPanel");
+                if (Application.internetReachability != NetworkReachability.NotReachable)
+                {
+                    SceneManager.LoadSceneAsync("AccountPanel");
+                    Debug.Log("Loaded Account Panel.");
+                } else
+                {
+                    if (!rTextObj.activeInHierarchy)
+                    {
+                        rTextObj.SetActive(true);
+                    }
+                    rText.text = "No Internet Connection!";
+                }
+                
+            } else
+            {
+                Debug.Log("Password is Null.");
             }
                   
         } else
@@ -42,13 +66,12 @@ public class gameManager : MonoBehaviour
             Debug.Log("Account Not Valid.");
         }
     }
+    #region Scenes
     public void ToSongs ()
     {
         SceneManager.LoadSceneAsync("DefaultSongs");
-        //VV To be added back in 1.4
-        //SceneManager.LoadSceneAsync("SongsPanel");
+        //SceneManager.LoadSceneAsync("SongsPanel"); 1.4
     }
-    #region Scenes
     public void ButtonToGame()
     {
         SceneManager.LoadSceneAsync("MainScene");

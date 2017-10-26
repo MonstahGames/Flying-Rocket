@@ -40,7 +40,7 @@ public class ProfileStats : MonoBehaviour
     public void ShowProfile ()
     {
         string userID = PlayerPrefs.GetString("userID");
-        StartCoroutine(GetStats(userID));
+        //StartCoroutine(GetStats(userID));
     }
     IEnumerator GetStats (string id)
     {
@@ -54,7 +54,7 @@ public class ProfileStats : MonoBehaviour
         Debug.Log(GetHashString(hash));
         Debug.Log(www.text);
         Debug.Log(id);
-        //SetVariables(www.text);
+        SetVariables(www.text);
     }
     void SetVariables (string result)
     {

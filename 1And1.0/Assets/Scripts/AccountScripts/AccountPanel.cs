@@ -12,12 +12,19 @@ public class AccountPanel : MonoBehaviour
     public GameObject inboxObj;
     
     void Start ()
-    {        
+    {
         username.text = PlayerPrefs.GetString("username");
         highscore.text = PlayerPrefs.GetInt("highScore").ToString();
         balanceText.text = "$" + PlayerPrefs.GetInt("balance").ToString();
 
         CheckBanned();     
+    }
+    void Update ()
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
     void CheckBanned ()
     {
