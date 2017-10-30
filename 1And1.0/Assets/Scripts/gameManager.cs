@@ -80,6 +80,11 @@ public class gameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ResetKeys ()
+    {
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+    }
     public void Credits()
     {
         SceneManager.LoadSceneAsync("CreditsPanel");

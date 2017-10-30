@@ -2,6 +2,7 @@
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class playerCollision : MonoBehaviour
@@ -15,6 +16,8 @@ public class playerCollision : MonoBehaviour
     public Text balanceText;
     int balance;
     int tBalance;
+
+    int highScoreNumber;
 
 
     public void OnTriggerEnter2D (Collider2D col)
@@ -30,45 +33,24 @@ public class playerCollision : MonoBehaviour
         CallAd();
         disEnableGO();
                    
-        int highScoreNumber = Convert.ToInt32(scoreText.text);
-        #region earned
-        if (highScoreNumber < 1000)
-        {
-            countEarnedScraps(1);
-        } else if (highScoreNumber < 2000)
-        {
-            countEarnedScraps(2);
-        } else if (highScoreNumber < 3000)
-        {
-            countEarnedScraps(3);
-        } else if (highScoreNumber < 4000)
-        {
-            countEarnedScraps(4);
-        } else if (highScoreNumber < 5000)
-        {
-            countEarnedScraps(5);
-        } else if (highScoreNumber < 6000)
-        {
-            countEarnedScraps(6);
-        } else if (highScoreNumber < 7000)
-        {
-            countEarnedScraps(7);
-        }
-        #endregion
+        highScoreNumber = Convert.ToInt32(scoreText.text);
+
 
         if (highScoreNumber >= PlayerPrefs.GetInt("highScore"))
         {
             PlayerPrefs.SetInt("highScore", highScoreNumber);
         }
+        countEarnedScraps();
         SetText();
+        
     }
-    void countEarnedScraps (int earned)
+    void countEarnedScraps ()
     {
+        print("calling");
         balance = PlayerPrefs.GetInt("balance");
-        int newBalance;
-        newBalance = balance * earned;
+        int newBalance = balance + highScoreNumber;
         PlayerPrefs.SetInt("balance", newBalance);
-        balanceText.text = "$" + newBalance;
+        balanceText.text = "$" + PlayerPrefs.GetInt("balance");
     }
     public void ButtonToRestart()
     {
