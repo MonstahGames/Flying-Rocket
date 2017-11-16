@@ -9,6 +9,7 @@ public class DefaultSongs : MonoBehaviour
      All Rights Reserved.
     */
 
+    #region Variables
     public GameObject infoPanel;
 
     public Text songText;
@@ -18,11 +19,8 @@ public class DefaultSongs : MonoBehaviour
     string songName;
     string authorName;
     string urllink;
+    #endregion
 
-    public void SelectSong (int index)
-    {
-        PlayerPrefs.SetInt("selectedSong", index);
-    }
     #region GetInfo
     public void GetName (string name)
     {
@@ -37,6 +35,8 @@ public class DefaultSongs : MonoBehaviour
         urllink = url;
     }
     #endregion
+
+    #region Panels
     public void EnableInfoPanel ()
     {
         infoPanel.SetActive(true);
@@ -48,10 +48,19 @@ public class DefaultSongs : MonoBehaviour
     {
         infoPanel.SetActive(false);
     }
+    #endregion
+
+    #region Song
     public void OpenSongURL ()
     {
         Application.OpenURL(urllink);
     }
+    public void SelectSong(int index)
+    {
+        PlayerPrefs.SetInt("selectedSong", index);
+    }
+    #endregion
+
     public void Back ()
     {
         SceneManager.LoadScene("MainMenu");

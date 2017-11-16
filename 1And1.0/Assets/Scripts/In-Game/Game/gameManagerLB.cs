@@ -17,7 +17,8 @@ public class gameManagerLB : MonoBehaviour
 
     
     string CreateUserURL = "http://sigmastudios.tk/FlyingRocket/createFRAccount.php";
-    string existsLink = "http://sigmastudios.tk/FlyingRocket/nameExists13.php";
+    string userexistsURL = "http://sigmastudios.tk/FlyingRocket/nameExists13.php";
+    string privacyPolicyURL = "http://sigmastudios.tk/FlyingRocket/privacypolicy.htm";
     #endregion
 
     #region CreatePrep
@@ -88,7 +89,7 @@ public class gameManagerLB : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("usernamePost", username);
         form.AddField("hashPost", GetHashString(hash));
-        WWW www = new WWW(existsLink, form);
+        WWW www = new WWW(userexistsURL, form);
         yield return www;
         ProcessNameExists(www.text, username, pass, email);
     }
@@ -153,6 +154,10 @@ public class gameManagerLB : MonoBehaviour
     public void ToLogin ()
     {
         SceneManager.LoadScene("LoginPanel");
+    }
+    public void OpenPolicy ()
+    {
+        Application.OpenURL(privacyPolicyURL);
     }
     #endregion
 
